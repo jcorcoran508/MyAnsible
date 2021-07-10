@@ -1,0 +1,117 @@
+    1  id
+    2  clear
+    3  exit
+    4  ssh 10.0.0.63
+    5  ssh-keygen -t ed25519 -C 
+    6  ssh-keygen -t ed25519 -C "john default
+    7  "
+    8  ls -la .ssh
+    9  ssh 10.0.0.63
+   10  ssh-keygen -t ed25519 -C "ansible"
+   11  ssh-copy-id-i ~/.ssh/ansible.pub 10.0.0.63
+   12  ssh-copy-id -i ~/.ssh/ansible.pub 10.0.0.63
+   13  cat .ssh/authorized
+   14  ls
+   15  pwd
+   16  cat .ssh/authorized_keys
+   17  ls -la
+   18  id
+   19  cd .ssh
+   20  ls
+   21  cat .ssh/authorized_keys
+   22  pwd
+   23  cd ..
+   24  cat .ssh/authorized_keys
+   25  pwd
+   26  ls -la
+   27  ls -l ./ssh
+   28  ls
+   29  ls -la
+   30  more .ssh
+   31  cd .ssh
+   32  ls
+   33  cat known_hosts 
+   34  id
+   35  ssh -i ~/.ssh/ansible 10.0.0.63
+   36  id
+   37  exit
+   38  which git
+   39  yum install git -y
+   40  su -
+   41  ls
+   42  cd .ssh
+   43  ls
+   44  ls -l
+   45  cat ansible.pub
+   46  clear
+   47  git@github.com:jcorcoran508/ansible_rollout.git
+   48  git clone git@github.com:jcorcoran508/ansible_rollout.git
+   49  sudo git clone git@github.com:jcorcoran508/ansible_rollout.git
+   50  su - john
+   51  sudo git clone git@github.com:jcorcoran508/ansible_rollout.git
+   52  ls
+   53  cd .ssh
+   54  clear
+   55  ls
+   56  ls -l
+   57  cat ansible.pub
+   58  git clone git@github.com:jcorcoran508/bingo.git
+   59  ssh -vT git@github.com
+   60  cat known_hosts C
+   61  git clone git@github.com:jcorcoran508/bingo.git
+   62  ls
+   63  more id_ed25519.pub
+   64  git clone git@github.com:jcorcoran508/fruit.git
+   65  cd /etc/selinux
+   66  ls
+   67  vi config
+   68  sudo vi config
+   69  ls
+   70  sudo firewall-cmd --state
+   71  sudo systemctl stop firewalld
+   72  sudo systemctl disable firewalld
+   73  reboot
+   74  sudo reboot
+   75  ls
+   76  rm -rf fruit  .ssh
+   77  ls .ssh
+   78  clear
+   79  pwd
+   80   ssh-keygen -t rsa  -b 4096 -C "jcorcoran508@gmail.com"
+   81  eval $(ssh-agent -s)
+   82  ssh=add ~/.ssh/id_isa
+   83  ssh-add ~/.ssh/id_isa
+   84  ssh-add ~/.ssh/id_rsa
+   85  pwd
+   86  cd .ssh
+   87  ls
+   88  cat id_rsa.pub
+   89  clear
+   90  ssh -T git@github.com
+   91  cd
+   92  ls
+   93  git status
+   94  git clone git@github.com:jcorcoran508/
+   95  git clone git@github.com:jcorcoran508/ansiblerun.git
+   96  git clone git@github.com:jcorcoran508/ansiblerun
+   97  set =o vi
+   98  set -o vi 
+   99  history |grep htt
+  100  pwd
+  101  mkdir projects
+  102  cd projects
+  103  clear
+  104  17276git clone
+  105  ls
+  106  git clone git@github.com:jcorcoran508/MyAnsible.git
+  107  ls
+  108  ls -l
+  109  cd MyAnsible/
+  110  ls
+  111  more README.md 
+  112  ls
+  113  cd projects/
+  114  ls
+  115  history
+  116  history |more
+  117  history > myhistory
