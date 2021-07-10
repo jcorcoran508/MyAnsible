@@ -1,0 +1,25 @@
+   38  which git
+   39  yum install git -y
+   47  git@github.com:jcorcoran508/ansible_rollout.git
+   48  git clone git@github.com:jcorcoran508/ansible_rollout.git
+   49  sudo git clone git@github.com:jcorcoran508/ansible_rollout.git
+   51  sudo git clone git@github.com:jcorcoran508/ansible_rollout.git
+   58  git clone git@github.com:jcorcoran508/bingo.git
+   59  ssh -vT git@github.com
+   61  git clone git@github.com:jcorcoran508/bingo.git
+   64  git clone git@github.com:jcorcoran508/fruit.git
+   90  ssh -T git@github.com
+   93  git status
+   94  git clone git@github.com:jcorcoran508/
+   95  git clone git@github.com:jcorcoran508/ansiblerun.git
+   96  git clone git@github.com:jcorcoran508/ansiblerun
+  104  17276git clone
+  106  git clone git@github.com:jcorcoran508/MyAnsible.git
+  123  history |grep git
+  124  git status
+  125  git add myhistory
+  126  git status
+  127  git remote -v
+  128  git commit -m "COMMENT TO DESCRIBE THE INTENTION OF THE COMMIT"
+  129  git push 
+  140  history |grep git >gitCommands.txt
