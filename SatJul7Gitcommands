@@ -1,0 +1,26 @@
+    1  cat ~/.gitconfig
+    2  ls -l
+    3  cd projects/MyAnsible/
+    4  clear
+    5  ls
+    6  ls -l
+    7  git status
+    8  clear
+    9  git diff
+   10  get diff README.md 
+   11  git diff README.md 
+   12  clear
+   13  git add README.md 
+   14  git status
+   15  git add 
+   16  git add .
+   17  git status
+   18  clear
+   19  git commit m "Added History file, 2nd commit"
+   20  clear
+   21  git commit -m "Added History file, 2nd commit"
+   22  clear
+   23  If not present , run git push 
+   24  git push origin master 
+   25  git push origin 
+   26  history >SatJul7Gitcommands
