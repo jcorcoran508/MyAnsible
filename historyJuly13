@@ -1,0 +1,326 @@
+    1  id
+    2  clear
+    3  exit
+    4  ssh 10.0.0.63
+    5  ssh-keygen -t ed25519 -C 
+    6  ssh-keygen -t ed25519 -C "john default
+    7  "
+    8  ls -la .ssh
+    9  ssh 10.0.0.63
+   10  ssh-keygen -t ed25519 -C "ansible"
+   11  ssh-copy-id-i ~/.ssh/ansible.pub 10.0.0.63
+   12  ssh-copy-id -i ~/.ssh/ansible.pub 10.0.0.63
+   13  cat .ssh/authorized
+   14  ls
+   15  pwd
+   16  cat .ssh/authorized_keys
+   17  ls -la
+   18  id
+   19  cd .ssh
+   20  ls
+   21  cat .ssh/authorized_keys
+   22  pwd
+   23  cd ..
+   24  cat .ssh/authorized_keys
+   25  pwd
+   26  ls -la
+   27  ls -l ./ssh
+   28  ls
+   29  ls -la
+   30  more .ssh
+   31  cd .ssh
+   32  ls
+   33  cat known_hosts 
+   34  id
+   35  ssh -i ~/.ssh/ansible 10.0.0.63
+   36  id
+   37  exit
+   38  which git
+   39  yum install git -y
+   40  su -
+   41  ls
+   42  cd .ssh
+   43  ls
+   44  ls -l
+   45  cat ansible.pub
+   46  clear
+   47  git@github.com:jcorcoran508/ansible_rollout.git
+   48  git clone git@github.com:jcorcoran508/ansible_rollout.git
+   49  sudo git clone git@github.com:jcorcoran508/ansible_rollout.git
+   50  su - john
+   51  sudo git clone git@github.com:jcorcoran508/ansible_rollout.git
+   52  ls
+   53  cd .ssh
+   54  clear
+   55  ls
+   56  ls -l
+   57  cat ansible.pub
+   58  git clone git@github.com:jcorcoran508/bingo.git
+   59  ssh -vT git@github.com
+   60  cat known_hosts C
+   61  git clone git@github.com:jcorcoran508/bingo.git
+   62  ls
+   63  more id_ed25519.pub
+   64  git clone git@github.com:jcorcoran508/fruit.git
+   65  cd /etc/selinux
+   66  ls
+   67  vi config
+   68  sudo vi config
+   69  ls
+   70  sudo firewall-cmd --state
+   71  sudo systemctl stop firewalld
+   72  sudo systemctl disable firewalld
+   73  reboot
+   74  sudo reboot
+   75  ls
+   76  rm -rf fruit  .ssh
+   77  ls .ssh
+   78  clear
+   79  pwd
+   80   ssh-keygen -t rsa  -b 4096 -C "jcorcoran508@gmail.com"
+   81  eval $(ssh-agent -s)
+   82  ssh=add ~/.ssh/id_isa
+   83  ssh-add ~/.ssh/id_isa
+   84  ssh-add ~/.ssh/id_rsa
+   85  pwd
+   86  cd .ssh
+   87  ls
+   88  cat id_rsa.pub
+   89  clear
+   90  ssh -T git@github.com
+   91  cd
+   92  ls
+   93  git status
+   94  git clone git@github.com:jcorcoran508/
+   95  git clone git@github.com:jcorcoran508/ansiblerun.git
+   96  git clone git@github.com:jcorcoran508/ansiblerun
+   97  set =o vi
+   98  set -o vi 
+   99  history |grep htt
+  100  pwd
+  101  mkdir projects
+  102  cd projects
+  103  clear
+  104  17276git clone
+  105  ls
+  106  git clone git@github.com:jcorcoran508/MyAnsible.git
+  107  ls
+  108  ls -l
+  109  cd MyAnsible/
+  110  ls
+  111  more README.md 
+  112  ls
+  113  cd projects/
+  114  ls
+  115  history
+  116  history |more
+  117  history > myhistory
+  118  ls
+  119  mv myhistory MyAnsible/
+  120  cd MyAnsible/
+  121  clear
+  122  ls
+  123  history |grep git
+  124  git status
+  125  git add myhistory
+  126  git status
+  127  git remote -v
+  128  git commit -m "COMMENT TO DESCRIBE THE INTENTION OF THE COMMIT"
+  129  git push 
+  130  shutdown now
+  131  sudo shutdown now
+  132  clear
+  133  ssh 10.0.0.63
+  134  ssh 10.0.0.64
+  135  clear
+  136  l
+  137  ls
+  138  ls .ssh
+  139  clear
+  140  ls -l .ssh
+  141  ssh-keygen -t ed25519 -C "john default"
+  142  ls -ltr
+  143  ls -ltr .ssh
+  144  cat *pub
+  145  cat .ssh/*pub
+  146  clear
+  147  copy key to remote server
+  148  ssh-copy-id -i ~/.ssh/id_ed25519.pub 10.0.0.63
+  149  clear
+  150  ssh 10.0.0.63
+  151  ssh-copy-id -i ~/.ssh/id_ed25519.pub 10.0.0.63
+  152  ssh 10.0.0.63
+  153  clear
+  154  ssh-copy-id -i ~/.ssh/id_ed25519.pub 10.0.0.64
+  155  ls -l
+  156  ssh 10.0.0.64
+  157  clear
+  158  ssh-keygen -t ed25519 -C "ansible"
+  159  ls .ssh/
+  160  clear
+  161  ssh-copy-id -i ~/.ssh/ansible.pub 10.0.0.63
+  162  clear
+  163  ssh-copy-id -i ~/.ssh/ansible.pub 10.0.0.64
+  164  clear
+  165  ssh -i ~/.ssh/ansible 10.0.0.63
+  166  ssh -i ~/.ssh/ansible 10.0.0.64
+  167  close
+  168  clear
+  169  Now the remote servers has the ansible ssh key and working passwordless
+  170  how to use:
+  171  Using the ansible key 
+  172  ssh -i ~/.ssh/ansible 10.0.0.64
+  173  clear
+  174  eval $(ssh-agent)
+  175  ssh-add
+  176  ssh 10.0.0.64
+  177  clear
+  178  ls
+  179  alias ssha='eval $(ssh-agent) && ssh-add'
+  180  ssha
+  181  alias ssha='eval $(ssh-agent) && ssh-add'
+  182  ssha
+  183  alias ssha='eval $(ssh-agent) && ssh-add /home/john/.ssh/id_ed25519'
+  184  ssha
+  185  ssh -i ~/.ssh/ansible 10.0.0.64
+  186  ssh -i ~/.ssh/ansible 10.0.0.63
+  187  shutdown now
+  188  su -
+  189  ls
+  190  cd projectsls
+  191  cd projects/
+  192  ls
+  193  cd MyAnsible/
+  194  clear
+  195  id
+  196  sudo dnf  install epl-release
+  197  clear
+  198  id
+  199  sudo dnf  install epel-release
+  200  ls
+  201  clear
+  202  sudo config-manager --set-enabled PowerTools
+  203  sudo dnf config-manager --set-enabled PowerTools
+  204  sudo dnf config-manager --set-enabled 
+  205  clear
+  206  sudo dnf config-manager --set-enabled PowerTools
+  207  clear
+  208  sudo yum update 
+  209  clrar
+  210  clear
+  211  sudo dnf install ansible
+  212  ls
+  213  cd projects/
+  214  ls
+  215  which ansible
+  216  ssh -i ~/.ssh/ansible 10.0.0.64
+  217  his
+  218  clear
+  219  ls -l
+  220  history
+  221  history |grep ping
+  222  ls
+  223  cd MyAnsible/
+  224  ls
+  225  grep ping *
+  226  clear
+  227  ansible all -/.ssh/ansible -i inventory -m ping
+  228  ansible all ~/.ssh/ansible -i inventory -m ping
+  229  sl .ssh
+  230  cd /home/john/.ssh
+  231  ls
+  232  ansible all ~/.ssh/ansible -i inventory -m ping
+  233  clear
+  234  ansible all --key-file ~/.ssh/ansible -i inventory -m ping
+  235  pwd
+  236  cd 
+  237  ls
+  238  cd projects/
+  239  LS
+  240  ls
+  241  cd M
+  242  cd MyAnsible/
+  243  clear
+  244  ls
+  245  ansible all --key-file ~/.ssh/ansible -i inventory -m ping
+  246  ansible all -m ping
+  247  pwd
+  248  cd projects/
+  249  ls
+  250  cd MyAnsible/
+  251  clear
+  252  pwd
+  253  ls
+  254  ansible all -m ping
+  255  ls
+  256  vi inventory 
+  257  ls
+  258  vi ansible.cfg
+  259  set -o vi
+  260  clear
+  261  ansible all -m ping
+  262  ls
+  263  cat ans*  inve*
+  264  clear
+  265  cat ansible.cfg 
+  266  cat inventory 
+  267  clear
+  268  ansible all --list-hosts
+  269  ansible all -m gater_facts
+  270  clear
+  271  ansible all -m gather_facts
+  272  clear
+  273  ansible all -m gather_facts --limit 10.0.0.64
+  274  clear
+  275  git status
+  276  git add ansible.cfg
+  277  git status
+  278  clear
+  279  git commit -m "getting better ansible.conf"
+  280  git push origin project
+  281  git push origin 
+  282  ssh 10.0.0.63
+  283  ssh 10.0.0.64
+  284  su -
+  285  ls
+  286  cd projects
+  287    ls
+  288  cd MyAnsible/
+  289  clear
+  290  ls
+  291  vi inventory
+  292  git status
+  293  clear
+  294  git add inventory
+  295  git status
+  296  git add 
+  297  ls
+  298  git add SatJul7Gitcommands 
+  299  git status
+  300  git commit -m "created inventory file with 2 hosts"
+  301  git push origin master
+  302  git push origin
+  303  ansible all --key-file ~/.ssh/ansible -i inventory -m ping
+  304  which ansible
+  305  sudo find / -name ansible
+  306  cd 
+  307  ls
+  308  ls -l
+  309  sudo find / -name ansible
+  310  set -o vi
+  311  alias ssha='eval $(ssh-agent) && ssh-add /home/john/.ssh/id_ed25519'
+  312  which ansible
+  313  ps -ef|grep ansible
+  314  su 
+  315  pwd
+  316  ls .ssh/*
+  317  clear
+  318  ls
+  319  cd projects/
+  320  ls
+  321  cd MyA
+  322  ls
+  323  cd MyAnsible/
+  324  clear
+  325  git status
+  326  history > historyJuly13
