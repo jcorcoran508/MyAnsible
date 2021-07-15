@@ -14,7 +14,7 @@
         - yum-utils
         - wget
         - epel-release
-      state: latest
+      state: absent 
       update_cache: yes
     when: ansible_distribution == "CentOS"
 
