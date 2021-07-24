@@ -7,52 +7,42 @@
   - name: install updates (CentOS) 
     tags: always
     dnf:
-      update_only: yes
       update_cache: yes
+    changed_when: false
     when: ansible_distribution == "CentOS"
+
+  - name: install updates (Ubuntu) 
+    tags: always
+    apt:
+      update_cache: yes
+    changed_when: false
+    when: ansible_distribution == "Ubuntu"
 
 - hosts: all
   become: true
   tasks:
 
-  - name: create splunkuser service account
+  - name: create splunk service account
     tags: always
     user:
-      name: splunkuser 
+      name: splunk
       groups: wheel 
+      state: absent
 
   - name: add ssh key for splunkuser
     tags: always
     authorized_key:
-      user: splunkuser
+      user: splunk
       key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOQ3p391P2eBsedN0hIQMZF/wvpDBjDwFODOI7ZSL44h ansible"  
 
   - name: add sudoers file for splunkuser
     tags: always
     copy:
-      src: sudoer_splunkuser
-      dest: /etc/sudoers.d/splunkuser
+      src: sudoer_splunk
+      dest: /etc/sudoers.d/splunk
       owner: root
       group: root
       mode: 0440
 
-  - name: install unzip
-    package:
-      name: unzip
  
- 
-  - name: install updates (Ubuntu) 
-    tags: always
-    apt:
-      update_only: yes
-      update_cache: yes
-    when: ansible_distribution == "Ubuntu"
-
-  - name: install updates (CentOS) 
-    tags: always
-    dnf:
-      update_only: yes
-      update_cache: yes
-    when: ansible_distribution == "CentOS"
-
 

@@ -7,9 +7,16 @@
   - name: install updates (CentOS) 
     tags: always
     dnf:
-      update_only: yes
       update_cache: yes
+    changed_when: false
     when: ansible_distribution == "CentOS"
+
+  - name: install updates (Ubuntu) 
+    tags: always
+    apt:
+      update_cache: yes
+    changed_when: false
+    when: ansible_distribution == "Ubuntu"
 
 - hosts: all
   become: true
@@ -36,23 +43,5 @@
       group: root
       mode: 0440
 
-  - name: install unzip
-    package:
-      name: unzip
  
- 
-  - name: install updates (Ubuntu) 
-    tags: always
-    apt:
-      update_only: yes
-      update_cache: yes
-    when: ansible_distribution == "Ubuntu"
-
-  - name: install updates (CentOS) 
-    tags: always
-    dnf:
-      update_only: yes
-      update_cache: yes
-    when: ansible_distribution == "CentOS"
-
 

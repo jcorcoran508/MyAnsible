@@ -1,0 +1,136 @@
+---
+
+- hosts: all
+  become: true
+  pre_tasks:
+
+  - name: install updates (CentOS) 
+    tags: always
+    dnf:
+      update_only: yes
+      update_cache: yes
+    when: ansible_distribution == "CentOS"
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: create splunkuser service account
+    tags: always
+    user:
+      name: splunkuser 
+      groups: wheel 
+
+  - name: add ssh key for splunkuser
+    tags: always
+    authorized_key:
+      user: splunkuser
+      key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOQ3p391P2eBsedN0hIQMZF/wvpDBjDwFODOI7ZSL44h ansible"  
+
+  - name: add sudoers file for splunkuser
+    tags: always
+    copy:
+      src: sudoer_splunkuser
+      dest: /etc/sudoers.d/splunkuser
+      owner: root
+      group: root
+      mode: 0440
+
+  - name: install unzip
+    package:
+      name: unzip
+ 
+  - name: change e-mail address for admin 
+    tags: apache,apache2,httpd
+    lineinfile:
+      path: /etc/httpd/conf/httpd.conf
+      regexp: '^ServerAdmin'
+      line: ServerAdmin jamoke@somewhere.net
+    when: ansible_distribution == "CentOS"
+    register: httpd
+
+  - name: restart httpd (CentOS)
+    tags: apache,centos, httpd
+    service:
+      name: httpd
+      state: restarted
+    when: httpd.changed
+
+  - name: copy splunk forwarder tar file in /tmp
+    tags: apache,apache2,httpd
+    copy:
+     src: splunkforwarder-7.2.0-8c86330ac18-Linux-x86_64.tgz 
+     dest: /tmp 
+     owner: john
+     group: john
+     mode: 0644
+ 
+  - name: install updates (Ubuntu) 
+    tags: always
+    apt:
+      update_only: yes
+      update_cache: yes
+    when: ansible_distribution == "Ubuntu"
+
+
+- hosts: web_servers
+  become: true
+  tasks:
+
+  - name: install apache and php for Ubuntu servers
+    tags: apache,apache2,ubuntu
+    apt:
+      name:
+      - apache2
+      - libapache2-mod-php
+      state: latest
+    when: ansible_distribution == "Ubuntu"
+
+
+  - name: install apached and php for CentOS servers 
+    tags: apache,apache2,centos
+    dnf:
+      name:
+        - httpd
+        - php
+      state: latest
+    when: ansible_distribution == "CentOS"
+
+  - name: start httpd (Centos) 
+    tags: apache,httpd,centos
+    service: 
+      name: httpd
+      state: started 
+      enabled: yes
+    when: ansible_distribution == "CentOS"
+
+
+- hosts: db_servers
+  become: true
+  tasks:
+
+  - name:  install mariadb pachage (CentOS)
+    tags: db,mariadb,centos
+    dnf:
+      name: mariadb
+      state: latest
+    when: ansible_distribution == "CentOS"
+
+
+  - name:  install mariadb pachage (Ubuntu)
+    tags: db,mariadb,ubuntu
+    apt:
+      name: mariadb
+      state: latest
+    when: ansible_distribution == "Ubuntu"
+
+- hosts: file_servers
+  become: true
+  tasks:
+
+  - name: install samba package
+    tags: samba
+    dnf:
+      name: samba
+      state: latest 
+    when: ansible_distribution == "CentOS"

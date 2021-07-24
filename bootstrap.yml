@@ -1,0 +1,40 @@
+---
+
+- hosts: all
+  become: true
+  pre_tasks:
+
+  - name: install updates (CentOS) 
+    tags: always
+    dnf:
+      update_cache: yes
+    changed_when: false
+    when: ansible_distribution == "CentOS"
+
+  - name: install updates (Ubuntu) 
+    tags: always
+    apt:
+      update_cache: yes
+    changed_when: false
+    when: ansible_distribution == "Ubuntu"
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: create splunk service account
+    tags: always
+    user:
+      name: splunk
+      groups: wheel 
+      state: absent
+
+  - name: create splunk service account
+    tags: always
+    user:
+      name: splunkuser
+      groups: wheel 
+      state: absent
+
+ 
+
