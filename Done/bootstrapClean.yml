@@ -1,0 +1,27 @@
+---
+
+- hosts: all
+  become: true
+  pre_tasks:
+
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name:  Removing splunk service account
+    tags: always
+    user:
+      name: splunk
+      groups: splunk 
+      state: absent
+
+  - name: Removing  splunkuser service account
+    tags: always
+    user:
+      name: splunkuser
+      groups: splunkuser 
+      state: absent
+
+ 
+

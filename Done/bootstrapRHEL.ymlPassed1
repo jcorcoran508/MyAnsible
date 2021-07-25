@@ -1,0 +1,50 @@
+---
+
+- hosts: all
+  become: true
+  pre_tasks:
+
+  - name: Keep cache fresh (RHEL)
+    tags: always
+    dnf:
+      update_cache: yes
+    when: ansible_distribution == "CentOS"
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: create splunk service account
+    tags: always
+    user:
+      name: splunk
+
+
+  - name: add ssh key for splunk
+    tags: always
+    authorized_key:
+      user: splunk
+      key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOQ3p391P2eBsedN0hIQMZF/wvpDBjDwFODOI7ZSL44h ansible"
+
+  - name: add sudoers file for splunk
+    tags: always
+    copy:
+      src: sudoer_splunk
+      dest: /etc/sudoers.d/splunk
+      owner: root
+      group: root
+      mode: 0440
+
+  - name: install unzip
+    package:
+      name: unzip
+
+  - name: copy splunk forwarder tar file in /tmp
+    tags: apache,apache2,httpd
+    copy:
+      src: splunkforwarder-7.2.0-8c86330ac18-Linux-x86_64.tgz
+      dest: /tmp
+      owner: splunk
+      group: splunk 
+      mode: 0644
+
